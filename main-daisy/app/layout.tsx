@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 import { cookies } from 'next/headers';
 
 
-export default function RootLayout({ children } :{children :React.ReactNode}) {
+export default async function RootLayout({ children } :{children :React.ReactNode}) {
   // Get theme from cookies on the server
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const theme = cookieStore.get('colortheme')?.value || 'light';
 
   return (

@@ -12,8 +12,11 @@ export function middleware(request) {
 
   if (newTheme) {
     theme = newTheme;
+    console.log("from search params")
   } else if (cookieTheme) {
     theme = cookieTheme;
+    console.log("from cookies")
+
   }
 
   // Return early if no theme is set
